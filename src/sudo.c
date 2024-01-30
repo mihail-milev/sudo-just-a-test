@@ -163,6 +163,13 @@ main(int argc, char *argv[], char *envp[])
     bindtextdomain(PACKAGE_NAME, LOCALEDIR);
     textdomain(PACKAGE_NAME);
 
+#ifdef THIS_IS_NO_SET
+    char* some_dummy_array[30];
+    free(some_dummy_array);
+#endif
+    char* another_dummy_array[20];
+    free(another_dummy_array);
+
     (void) tzset();
 
     /* Must be done before we do any password lookups */
